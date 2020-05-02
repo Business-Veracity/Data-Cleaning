@@ -1,7 +1,8 @@
 import ujson as json
 import pandas as pd
 
-records = map(json.loads, open('15.json'))
+records = map(json.loads, open('trasnformme.json'))
 df = pd.DataFrame.from_records(records)
-
-df.to_csv(r'transformedjason.csv', index = False)
+#df["duration"]= df["duration"].astype(float) 
+df.to_csv(r'transformedjasonlgdm.csv', index = False, encoding="utf-8")
+print (df.dtypes)
